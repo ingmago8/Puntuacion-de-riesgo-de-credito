@@ -10,7 +10,7 @@ st.set_page_config(
 
 # SIDEBAR #####################################################################################
 import os
-image_path = os.path.join(os.getcwd(), 'High-Risk-scaled.jpg')
+image_path = os.path.join(os.path.dirname(__file__), 'High-Risk-scaled.jpg')
 
 with st.sidebar:
     st.image(image_path, width=400)
