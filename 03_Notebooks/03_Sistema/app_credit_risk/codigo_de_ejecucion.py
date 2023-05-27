@@ -38,13 +38,18 @@ def ejecutar_modelos(df):
 
 
     #6.CARGA PIPES DE EJECUCION
-    with open('pipe_ejecucion_pd.pickle', mode='rb') as file:
+    import os
+    ruta_pipe_pd = os.path.join(os.path.dirname(__file__),'pipe_ejecucion_pd.pickle')
+    ruta_pipe_ead = os.path.join(os.path.dirname(__file__),'pipe_ejecucion_pd.pickle')
+    ruta_pipe_lgd = os.path.join(os.path.dirname(__file__),'pipe_ejecucion_pd.pickle')
+                 
+    with open(ruta_pipe_pd, mode='rb') as file:
        pipe_ejecucion_pd = pickle.load(file)
 
-    with open('pipe_ejecucion_ead.pickle', mode='rb') as file:
+    with open(ruta_pipe_ead, mode='rb') as file:
        pipe_ejecucion_ead = pickle.load(file)
 
-    with open('pipe_ejecucion_lgd.pickle', mode='rb') as file:
+    with open(ruta_pipe_lgd, mode='rb') as file:
        pipe_ejecucion_lgd = pickle.load(file)
 
 
