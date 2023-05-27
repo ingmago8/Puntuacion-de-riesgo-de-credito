@@ -9,8 +9,11 @@ st.set_page_config(
      layout = 'wide')
 
 # SIDEBAR #####################################################################################
+import os
+image_path = os.path.join(os.getcwd(), 'High-Risk-scaled.jpg')
+
 with st.sidebar:
-    st.image('High-Risk-scaled.jpg', width=400)
+    st.image(image_path, width=400)
     st.markdown(
         '''
         <div style="margin-top:30px">
