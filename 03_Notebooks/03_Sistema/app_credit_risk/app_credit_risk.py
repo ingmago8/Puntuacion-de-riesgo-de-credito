@@ -1,15 +1,16 @@
 from codigo_de_ejecucion import *
 import streamlit as st
 from streamlit_echarts import st_echarts
+import os
 
 #CONFIGURACION DE LA PÁGINA
+image_perfil = os.path.join(os.path.dirname(__file__), 'foto perfil miguel.png')
 st.set_page_config(
      page_title = 'Risk Score Analyzer by Miguel',
-     page_icon = 'foto perfil miguel.png',
+     page_icon = image_perfil,
      layout = 'wide')
 
 # SIDEBAR #####################################################################################
-import os
 image_path = os.path.join(os.path.dirname(__file__), 'High-Risk-scaled.jpg')
 
 with st.sidebar:
