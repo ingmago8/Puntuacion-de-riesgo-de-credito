@@ -1,0 +1,11 @@
+FROM python:3.9-alpine
+WORKDIR /app
+COPY . .
+RUN pip3 install -r 03_Notebooks/03_Sistema/app_credit_risk/requirements.txt
+EXPOSE 8501
+HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
+#HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health # Este comando agrega una comprobación de estado al contenedor.
+# Docker ejecutará regularmente este comando dentro del contenedor para verificar si la aplicación Streamlit está funcionando correctamente. 
+# Si el comando falla, Docker marcará el contenedor como “no saludable”
+
+ENTRYPOINT ["streamlit", "run", "03_Notebooks/03_Sistema/app_credit_risk/app_credit_risk.py", "--server.port=8501", "--server.address=0.0.0.0"]
